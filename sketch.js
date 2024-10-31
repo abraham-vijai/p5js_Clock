@@ -62,7 +62,7 @@ function drawTicks(numTicks, tickAngle, tickLength) {
 function drawTextAtAngle(angle, textContent, size, fillColor) {
   push();
   translate(width / 2, height / 2);
-  rotate(radians(angle - 90));
+  rotate(radians(angle));
   fill(fillColor);
   textSize(size);
   textAlign(CENTER);
