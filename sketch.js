@@ -13,24 +13,29 @@ function draw(){
   let minuteAngle = map(minute(), 0, 60, 0, 360);
   let hourAngle = map(hour(), 0, 12, 0, 360);
 
-  // Setup the clock
+  // Draw the clock
   drawClock()
+
+  // Draw the numbers
   drawNumbers();
-  drawTicks(12, CLOCK_ANGLE, 140) // Hours
-  drawTicks(60, 6,147) // Seconds
+
+  // Draw the Ticks
+  drawTicks(12, CLOCK_ANGLE, 140) 
+  drawTicks(60, 6,147) 
 
   // Draw the second hand
-  drawHands(secondAngle);
-  drawHands(minuteAngle);
-  drawHands(hourAngle);
+  drawHands(secondAngle, 1.5, 'red');
+  drawHands(minuteAngle,3, 'blue');
+  drawHands(hourAngle, 6, 'green');
 
 }
 
-function drawHands(handAngle){
+function drawHands(handAngle, weight, color){
   push();
   translate(width/2,height/2);
   rotate(handAngle);
-  strokeWeight(3)
+  strokeWeight(weight)
+  stroke(color)
   line(0,0, 0, -(CLOCK_RAIDUS/2)+TEXT_SIZE*2);
   pop();
 }
@@ -38,13 +43,11 @@ function drawHands(handAngle){
 function drawClock() {
   // Draw the clock
   ellipse(width/2,height/2, CLOCK_RAIDUS, CLOCK_RAIDUS);
-
 }
 
 function drawNumbers() {
   // Add numbers
   for (let i = 1; i <= 12; i++) {
-
     push();
     // Translate the origin to the center
     translate(width/2,height/2);
@@ -54,13 +57,12 @@ function drawNumbers() {
     rotate(CLOCK_ANGLE*i);
 
     // Draw the numbers
-    strokeWeight(2);
+    strokeWeight(3);
     textAlign(CENTER);
     textSize(TEXT_SIZE);
     text(TIME_ARRAY[i-1],0, -CLOCK_RAIDUS/2+25);
 
     pop();
-
   }
 }
 
