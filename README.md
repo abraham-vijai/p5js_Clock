@@ -20,7 +20,7 @@ A simple, customizable analog clock built with [p5.js](https://p5js.org/). This 
 ### Installation
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/analog-clock-p5.git
+   https://github.com/abraham-vijai/p5js_Clock.git
    cd analog-clock-p5
 
 2.  **Open the Project**: Open `index.html` in a web browser to run the code with p5.js included.
